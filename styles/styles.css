@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000;
+  overflow: hidden;
+}
+
+#gallery-container {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.image {
+  width: 40vmin;
+  height: 60vmin;
+  margin-right: 4vmin;
+  object-fit: cover;
+  object-position: center;
+}
+
+.image:nth-last-child(1) {
+  margin-right: 0;
+}
