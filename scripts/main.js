@@ -12,7 +12,7 @@ const handleOnUp = (e) => {
 const handleOnMove = (e) => {
   if(gallery.dataset.mouseDownAt === "0") return ;
   const mouseDelta = parseFloat(gallery.dataset.mouseDownAt) - e.clientX,
-        maxDelta = window.innerWidth / 2;
+        maxDelta = Math.min((window.innerWidth / 2), 340);
 
   const percentage = (mouseDelta / maxDelta) * -100,
         nextPercentage = Math.max(Math.min(parseFloat(gallery.dataset.prevPercentage) + percentage, 0), -100);
@@ -21,13 +21,13 @@ const handleOnMove = (e) => {
 
   gallery.animate({
     transform: `translate(${nextPercentage}%, -50%)`
-  }, {duration: 1400, fill: "forwards"})
+  }, {duration: 1000, fill: "forwards"})
 
 
   for(let image of gallery.getElementsByClassName('image')) {
     image.animate({
       objectPosition: `${nextPercentage + 100}% 50%`
-    }, {duration: 1400, fill: "forwards"})
+    }, {duration: 1000, fill: "forwards" })
   }
 }
 
