@@ -4,6 +4,7 @@ body {
   height: 100vh;
   background-color: #000000;
   overflow: hidden;
+  user-select: none;
 }
 
 #gallery-container {
@@ -19,7 +20,8 @@ body {
   height: 60vmin;
   margin-right: 4vmin;
   object-fit: cover;
-  object-position: center;
+  object-position: 100% 50%;
+  pointer-events: none;
 }
 
 .image:nth-last-child(1) {
